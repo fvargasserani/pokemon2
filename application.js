@@ -17,22 +17,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 morePokemons = document.querySelector('#more-pokemons')
 
             name.textContent = response.results.forEach(function (n) {
-                pokemonList.insertAdjacentHTML('beforeend', n.name + "<button type='button' class='btn btn-primary pokemon-info' data-bs-toggle='modal' data-bs-target='#pokemonModal' >I'd like to know more about this pokemon!</button>");
+                pokemonList.insertAdjacentHTML('beforeend', '<p>' + n.name + '</p>' + "<button type='button' class='btn btn-primary pokemon-info' data-bs-toggle='modal' data-bs-target='#pokemonModal' >I'd like to know more about this pokemon!</button>");
             })
             aboutPokemon.textContent = response.results.forEach(function (ap) {
-                aboutPokemon.insertAdjacentHTML('beforeend', ap.name)
+                aboutPokemon.insertAdjacentHTML('beforeend', '<p>' + ap.name + '</p>')
             })
             abilities.textContent = response.abilities.forEach(function (a) {
-                abilities.insertAdjacentHTML('beforeend', a.ability.name)
+                abilities.insertAdjacentHTML('beforeend', '<p>' + a.ability.name + '</p>')
             });
             type.textContent = response.types.forEach(function (t) {
-                type.insertAdjacentHTML('beforeend', t.type.name)
+                type.insertAdjacentHTML('beforeend', '<p>' + t.type.name + '</p>')
             });
             moves.texContent = response.moves.forEach(function (m) {
-                moves.insertAdjacentHTML('beforeend', m.moves.name)
+                moves.insertAdjacentHTML('beforeend', '<p>' + m.moves.name + '</p>')
             });
             generations.textContent = response.version.forEach(function (g) {
-                generations.insertAdjacentHTML('beforeend', + g.generations.name)
+                generations.insertAdjacentHTML('beforeend', '<p>' + g.generations.name + '</p>')
             });
             morePokemons.appendChild("<button>I'd like to see more pokemons!</button>"),
                 morePokemons.onclick(function () {
